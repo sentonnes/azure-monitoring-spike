@@ -18,8 +18,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet(WeatherForecastHandler.Pattern, WeatherForecastHandler.Handler)
-    .WithName(WeatherForecastHandler.Name)
-    .WithOpenApi();
+app.MapPost(StartHandler.Pattern, StartHandler.Handler).WithName(StartHandler.Name).WithOpenApi();
+app.MapPost(EndHandler.Pattern, EndHandler.Handler).WithName(EndHandler.Name).WithOpenApi();
 
 app.Run();
